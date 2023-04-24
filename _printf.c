@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-/** A project by Nakuru and */
+/** A project by Nakuru and Anifred*/
 
 /**
 * _putchar - Function to print a character
