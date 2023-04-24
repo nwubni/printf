@@ -1,6 +1,6 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
 
 /** A project by Nakuru and Anifred*/
 
@@ -12,7 +12,26 @@
 
 int _putchar(char c)
 {
-	return (putchar(c));
+	return (write(1, &c, 1));
+}
+
+/**
+* print_string - Prints a string
+* @s: String parameter
+* Return: Integer
+*/
+
+int print_string(char *s)
+{
+	int i = 0;
+
+	while (s && *s)
+	{
+		i += _putchar(*s);
+		s++;
+	}
+
+	return (i);
 }
 
 /**
@@ -43,7 +62,7 @@ int _printf(const char *format, ...)
 				count += _putchar(va_arg(args, int));
 				break;
 				case 's':
-				count += printf("%s", va_arg(args, char *));
+				count += print_string(va_arg(args, char *));
 				break;
 				case '%':
 				count += _putchar('%');
