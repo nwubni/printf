@@ -43,7 +43,7 @@ int print_string(char *s)
 int print_number(long int n)
 {
 	unsigned long int t, m;
-	int len = 0, zeroes = 0;;
+	int len = 0, zeroes = 0;
 
 	t = (unsigned long int)n;
 
