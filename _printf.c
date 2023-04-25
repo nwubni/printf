@@ -40,9 +40,10 @@ int print_string(char *s)
 * Return: Integer
 */
 
-int print_number(int n)
+int print_number(long int n)
 {
-	int m = 0, len = 0;
+	long int m = 0, 
+	int len = 0;
 
 	if (n < 0)
 	{
@@ -89,7 +90,7 @@ int formatter(char c, va_list args)
 		break;
 		case 'i':
 		case 'd':
-		count += print_number(va_arg(args, int));
+		count += print_number(va_arg(args, long int));
 		break;
 		case '%':
 		count += _putchar('%');
