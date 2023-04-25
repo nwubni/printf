@@ -50,13 +50,11 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-
 	while (format && *format)
 	{
 		if (*format == '%')
 		{
 			format++;
-
 			switch (*format)
 			{
 				case 'c':
@@ -68,6 +66,12 @@ int _printf(const char *format, ...)
 				break;
 				case '%':
 				count += _putchar('%');
+				break;
+				default:
+				if (*format == '\0')
+					break;
+				count += _putchar('%');
+				count += _putchar(*format);
 				break;
 			}
 		}
