@@ -81,5 +81,5 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(args);
-	return (count == 0 ? -1 : count);
+	return count;
 }
