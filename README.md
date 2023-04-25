@@ -1,3 +1,3 @@
 # C - printf
 
-A group project by Anifred 
+A group project by Nakuru  Anifred 
