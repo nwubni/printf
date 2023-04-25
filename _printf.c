@@ -43,7 +43,7 @@ int print_string(char *s)
 int _printf(const char *format, ...)
 {
 	int count = 0;
-	char *str
+	char *str;
 	va_list args;
 
 	va_start(args, format);
