@@ -69,7 +69,7 @@ int _printf(const char *format, ...)
 				break;
 				default:
 				if (*format == '\0')
-					return (count);
+					return (-1);
 				count += _putchar('%');
 				count += _putchar(*format);
 				break;
