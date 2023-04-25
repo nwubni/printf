@@ -57,6 +57,7 @@ int print_number(long int n)
 	{
 		zeroes++;
 		t /= 10;
+		len++;
 	}
 
 	while (t)
