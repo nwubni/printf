@@ -69,6 +69,7 @@ int print_number(int n)
 /**
 * formatter - Decides and prints the input format
 * @c: Character Parameter
+* @args: Arguments for variadic _printf
 * Return: Integer
 */
 
