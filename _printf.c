@@ -36,45 +36,50 @@ int print_string(char *s)
 
 /**
 * print_number - Prints a number
-* @n: Number string
+* @num: Number string
 * Return: Integer
 */
 
-int print_number(long int n)
+int print_number(int num)
 {
-	long int m = 0;
-	int len = 0;
+	int dig_len = 0, first = num, count = 0, x = 1, i, tmp;
 
-	int zeroes = 0;
+	tmp = num;
 
-	if (n < 0)
+	if (num < 0)
 	{
-		len = _putchar('-');
-		n *= -1;
-		zeroes++;
+		dig_len += _putchar('-');
+		num = (num * -1) - 1;
 	}
 
-	while (n)
+	while (first != 0)
 	{
-		m = (m * 10) + (n % 10);
-		n /= 10;
-		len++;
+		first /= 10;
+		count++;
 	}
 
-	while (m)
+	while (x <= count)
 	{
-		_putchar((m % 10) + '0');
-		m /= 10;
-		zeroes++;
+		first = num;
+		i = x;
+
+		while (i < count)
+		{
+			first /= 10;
+			i++;
+		}
+
+		if (tmp < 0 && x == count)
+			dig_len += _putchar(((first % 10) + 48) + 1);
+		else
+			dig_len += _putchar((first % 10) + 48);
+		x++;
 	}
 
-	while (zeroes < len)
-	{
-		_putchar('0');
-		zeroes++;
-	}
+	if (count == 0)
+		dig_len += _putchar('0');
 
-	return (len);
+	return (dig_len);
 }
 
 /**
@@ -100,7 +105,7 @@ int formatter(char c, va_list args)
 		break;
 		case 'i':
 		case 'd':
-		count += print_number(va_arg(args, long int));
+		count += print_number(va_arg(args, int));
 		break;
 		case '%':
 		count += _putchar('%');
