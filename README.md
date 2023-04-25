@@ -1,3 +1,3 @@
 # C - printf
 
-A group project by Nakuru Wubni and Anifred
+A group project by Nakuru Wubni and Annie
