@@ -71,7 +71,6 @@ int _printf(const char *format, ...)
 				break;
 				default:
 				count += _putchar('%');
-				count += _putchar(*format);
 				break;
 			}
 		}
