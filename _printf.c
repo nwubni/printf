@@ -114,8 +114,7 @@ int formatter(char c, va_list args)
 
 int _printf(const char *format, ...)
 {
-	int count = 0;
-	char *str;
+	int count = 0, val;
 	va_list args;
 
 	va_start(args, format);
@@ -128,7 +127,12 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			count += formatter(*format, args);
+			val = formatter(*format, args);
+
+			if (val == -1)
+				return (-1);
+
+			count += val;
 		}
 		else
 			count += _putchar(*format);
