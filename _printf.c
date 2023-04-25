@@ -64,7 +64,7 @@ int _printf(const char *format, ...)
 				break;
 				case 's':
 				str = va_arg(args, char *);
-				count += print_string((str ? str : "(null)"));
+				count += print_string((str == NULL ? "(null)" : str));
 				break;
 				case '%':
 				count += _putchar('%');
@@ -81,5 +81,5 @@ int _printf(const char *format, ...)
 		format++;
 	}
 	va_end(args);
-	return count;
+	return (count == 0 ? -1 : count);
 }
