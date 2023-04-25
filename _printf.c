@@ -42,19 +42,21 @@ int print_string(char *s)
 
 int print_number(long int n)
 {
-	long int m = 0;
+	unsigned long int t, m;
 	int len = 0;
+
+	t = (unsigned long int)n;
 
 	if (n < 0)
 	{
 		len = _putchar('-');
-		n *= -1;
+		t = (unsigned long int)(n * (-1));
 	}
 
-	while (n)
+	while (t)
 	{
-		m = (m * 10) + (n % 10);
-		n /= 10;
+		m = (m * 10) + (t % 10);
+		t /= 10;
 		len++;
 	}
 
