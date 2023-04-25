@@ -42,7 +42,7 @@ int print_string(char *s)
 
 int print_number(long int n)
 {
-	long int m = 0, 
+	long int m = 0;
 	int len = 0;
 
 	if (n < 0)
